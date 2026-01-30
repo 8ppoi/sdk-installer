@@ -28,7 +28,7 @@ done
 
 echo "GitHub の Personal access token を入力してください:"
 echo "(ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX のような文字列)"
-read GH_PAT
+read GH_PAT </dev/tty
 
 # GitHub API 叩いて検証
 RESP=$(curl -s -w "\n%{http_code}" -H "Authorization: token $GH_PAT" https://api.github.com/user)
